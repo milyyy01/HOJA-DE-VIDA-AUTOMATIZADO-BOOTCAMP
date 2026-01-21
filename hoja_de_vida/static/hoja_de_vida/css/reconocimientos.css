@@ -1,0 +1,78 @@
+/* --- reconocimientos.css (Ajustado para textos largos) --- */
+
+.cards-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.experience-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 40px;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease;
+    border: 1px solid var(--secondary-color); /* Borde rosáceo sutil */
+}
+
+.experience-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(87, 73, 100, 0.15); /* Tinte morado en la sombra */
+}
+
+/* 1. TÍTULO DEL PREMIO (Ajustado para que no se desborde) */
+.exp-role {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-main); /* Morado oscuro de tu paleta */
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    line-height: 1.4;
+    
+    /* --- REGLAS ANTI-DESBORDE --- */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    max-width: 100%;
+}
+
+/* Rejilla de datos */
+.exp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* Botón Fantasma (Documento - Café Rosáceo) */
+.ghost-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid var(--accent-color); /* Café rosáceo de tu paleta */
+    border-radius: 10px;
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+}
+
+.ghost-btn:hover {
+    background-color: var(--accent-color);
+    color: #ffffff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .experience-card {
+        padding: 25px;
+    }
+
+    .exp-role {
+        font-size: 1.1rem; /* Ajuste para legibilidad en móviles */
+    }
+
+    .exp-grid {
+        grid-template-columns: 1fr;
+    }
+}

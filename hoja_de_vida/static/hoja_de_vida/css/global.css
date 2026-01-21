@@ -1,0 +1,132 @@
+/* --- global.css --- */
+
+/* VARIABLES GLOBALES (Paleta: Morado, Café rosáceo, Crema) */
+:root {
+    --bg-color: #FFDAB3;         /* Fondo cálido crema */
+    --card-bg: #FFFFFF;          /* Blanco puro para tarjetas */
+    --text-main: #574964;        /* Morado oscuro para texto principal */
+    --text-secondary: #9F8383;   /* Café rosáceo para etiquetas */
+    --accent-color: #9F8383;     /* Color de acento */
+    --secondary-color: #C8AAAA;  /* Rosado pálido para bordes/detalles */
+    --border-radius: 20px;
+    --shadow: 0 10px 30px rgba(87, 73, 100, 0.15); /* Sombra con tinte morado */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    padding: 80px 20px 40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1100px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+/* --- TIPOGRAFÍA ESTÁNDAR --- */
+
+/* ETIQUETAS (Títulos pequeños en mayúscula) */
+.label-style {
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+    letter-spacing: 0.5px;
+    display: block;
+    margin-bottom: 8px;
+    line-height: 1.2;
+}
+
+/* VALORES (Texto normal) */
+.contact-value {
+    font-size: 1.1rem;
+    color: var(--text-main);
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* --- ELEMENTOS DE CONTACTO --- */
+
+.contact-list {
+    list-style: none;
+    padding-top: 10px;
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 25px;
+}
+
+.data-link {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: color 0.2s ease;
+}
+
+.data-link:hover {
+    color: var(--text-secondary);
+}
+
+/* --- NAVEGACIÓN Y BOTONES --- */
+
+.nav-menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    width: 100%;
+}
+
+.nav-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    min-height: 80px;
+    background: var(--card-bg);
+    padding: 15px 20px;
+    border-radius: 14px;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(87, 73, 100, 0.08);
+    transition: all 0.2s ease;
+    text-align: center;
+    overflow: hidden;
+    border: 1px solid transparent;
+}
+
+.nav-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow);
+    border-color: var(--secondary-color);
+}
+
+/* Ajuste del texto dentro del botón */
+.nav-btn .label-style {
+    color: var(--text-main);
+    font-size: 0.85rem;
+    margin: 0;
+    line-height: 1.3;
+    transition: color 0.2s ease;
+    word-wrap: break-word;
+    max-width: 100%;
+}
+
+.nav-btn:hover .label-style {
+    color: var(--text-secondary);
+}

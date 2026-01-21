@@ -1,0 +1,103 @@
+/* --- productos.css (Completo y Corregido) --- */
+
+.cards-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Título intermedio (Sin barra azul lateral) */
+.section-separator {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-main); /* Morado oscuro de tu paleta */
+    margin-bottom: 30px;
+}
+
+.experience-card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease;
+    border: 1px solid var(--secondary-color); /* Borde rosáceo sutil */
+    
+    /* --- AJUSTE VISUAL DE SIMETRÍA --- */
+    padding-top: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    /* Ponemos 30px abajo para compensar la altura de línea del texto. */
+    padding-bottom: 30px !important;
+}
+
+.experience-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 15px 40px rgba(87, 73, 100, 0.15); /* Sombra con tinte morado */
+}
+
+/* 1. TÍTULO DEL PRODUCTO (Estilo Maestro 1.5rem) */
+.exp-role {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-color); /* Café rosáceo de tu paleta */
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    line-height: 1.2;
+    
+    /* Protección contra textos largos */
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+}
+
+/* Bloque contenedor de la descripción */
+.exp-block {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--secondary-color);
+}
+
+/* 2. DESCRIPCIÓN (Estilo Campos) */
+.profile-description {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text-main);
+    line-height: 1.5;
+    margin-top: 5px;
+    max-width: 100%;
+}
+
+/* Rejilla de datos */
+.exp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* --- REGLAS DE LIMPIEZA FINAL --- */
+.experience-card > *:last-child,
+.exp-grid .contact-item:last-child,
+.exp-block:last-child,
+.exp-block p:last-child {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .experience-card {
+        padding: 25px;
+        padding-bottom: 20px !important;
+    }
+
+    .exp-role {
+        font-size: 1.4rem;
+    }
+
+    .section-separator {
+        font-size: 1.5rem;
+    }
+
+    .exp-grid {
+        grid-template-columns: 1fr;
+    }
+}
